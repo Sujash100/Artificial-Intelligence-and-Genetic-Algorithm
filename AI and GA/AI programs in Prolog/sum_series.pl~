@@ -1,0 +1,4 @@
+series(0,0).
+series(1,1).
+series(N,R):-N>1,N1 is N-1,series(N1,R1),R is N+R1.
+/*series(3,P).*/

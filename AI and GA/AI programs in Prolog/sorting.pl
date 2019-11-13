@@ -1,0 +1,13 @@
+insert(X,L,[X|L]).
+insert(X,[Y|L],[Y|L1]):-
+	insert(X,L,L1).
+permut([X],[X]).
+permut([X|L],P):-
+	permut(L,LP),insert(X,LP,P).
+ordered([]).
+ordered([_]).
+ordered([X,Y|T]):-
+	X=<Y,ordered([Y|T]).
+permsort(L,S):-permut(L,S),ordered(S).
+
+/*permsort([3,2,1],L1).*/
